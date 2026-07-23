@@ -1,6 +1,14 @@
 #!/bin/bash
 #this Script belong to Cloudaseem Youtube channel #####
 # jenkins installation on ubuntu 
+#This is the Debian package repository of Jenkins to automate installation and upgrade. To use this repository, first add the key to your system (for the Weekly Release Line):
+      sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
+    https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
+#Then add a Jenkins apt repository entry:
+  echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
+    https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+    /etc/apt/sources.list.d/jenkins.list > /dev/null
+# Update your local package index, then finally install Jenkins:
 sudo apt update
 sudo apt install fontconfig openjdk-21-jre
 java -version
