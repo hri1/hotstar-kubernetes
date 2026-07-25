@@ -26,8 +26,8 @@ pipeline {
                 dir('Terraform') {
                     sh '''
                     terraform init \
-                    -backend-config="access_key=$Access-Key-D" \
-                    -backend-config="secret_key=$Secret-Access-Key"
+                    -backend-config="access_key=$AWS_ACCESS_KEY_ID" \
+                    -backend-config="secret_key=$AWS_SECRET_ACCESS_KEY"
                     '''
                 }
             }
